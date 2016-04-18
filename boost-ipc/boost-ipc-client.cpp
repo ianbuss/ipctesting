@@ -10,6 +10,12 @@ int main(int argc, char* argv []) {
   using namespace boost::interprocess;
   using namespace std;
 
+  // Args
+  if (argc < 2) {
+    cerr << "Usage: " << argv[0] << " NUM\n";
+    return -1;
+  }
+
   // Open the shared mem object
   shared_memory_object shm (open_only, "TestShm", read_write);
 
@@ -25,8 +31,8 @@ int main(int argc, char* argv []) {
   int N = stoi(argv[1]);
   while(count < N) {
     // Setup string to send
-    string s = "Test string: " + to_string(count);
     ++count;
+    string s = "Test string: " + to_string(count);
 
     // Populate shared mem struct
     data->len = s.size();

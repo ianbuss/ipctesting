@@ -1,7 +1,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <string>
-#include "testipc.h"
+#include "boost-ipc.h"
 
 int main(int argc, char* argv []) {
 
