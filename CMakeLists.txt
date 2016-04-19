@@ -4,4 +4,6 @@ project(ipctesting)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wno-deprecated-declarations")
 
 add_subdirectory(boost-ipc)
+add_subdirectory(boost-lockfree)
+add_subdirectory(boost-shm-manual)
 add_subdirectory(zmq)
